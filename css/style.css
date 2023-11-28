@@ -1,0 +1,86 @@
+/* style.css */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    top: auto;
+}
+
+.tittlePage {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.tittlePage a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.container {
+    text-align: left;
+}
+
+.day {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.calculatorTable {
+    border-collapse: collapse;
+}
+
+.calculatorTable th, .calculatorTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.calculatorTable th {
+    background-color: #f2f2f2;
+}
+
+#display {
+    width: 275px;
+    height: auto;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.exercise {
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+    margin: 5px;
+}
+
+.exercise-link {
+    width: auto;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.exercise-link:hover {
+    background-color: #eee;
+    color: #555;
+}
+
+.no-hover {
+    pointer-events: none;
+}

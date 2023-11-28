@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/revou.png" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="tittlePage">
+        <h2><a href="https://www.youtube.com/watch?v=Vkio5WaiL7s" target="_blank">Link Youtube</a></h2>
+    </div>
+    <table class="calculatorTable">
+        <tr>
+            <th colspan="4">
+                <input type="text" id="display" readonly onkeydown="inputManual(event)">
+            </th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button onclick="clearDisplay()">AC</button>
+            </td>
+            <td>
+                <button onclick="backspace()">C</button>
+            </td>
+            <td>
+                <button onclick="operator('*')">*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="number(7)">7</button>
+            </td>
+            <td>
+                <button onclick="number(8)">8</button>
+            </td>
+            <td>
+                <button onclick="number(9)">9</button>
+            </td>
+            <td>
+                <button onclick="operator('/')">/</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="number(4)">4</button>
+            </td>
+            <td>
+                <button onclick="number(5)">5</button>
+            </td>
+            <td>
+                <button onclick="number(6)">6</button>
+            </td>
+            <td>
+                <button onclick="operator('+')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="number(3)">3</button>
+            </td>
+            <td>
+                <button onclick="number(2)">2</button>
+            </td>
+            <td>
+                <button onclick="number(1)">1</button>
+            </td>
+            <td>
+                <button onclick="operator('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="operator('+-')">+/-</button>
+            </td>
+            <td>
+                <button onclick="number(0)">0</button>
+            </td>
+            <td>
+                <button onclick="decimal()"><b>.</b></button>
+            </td>
+            <td>
+                <button onclick="calculate()">=</button>
+            </td>
+        </tr>
+    </table>
+    <script src="js/calculator.js"></script>
+</body>
+</html>

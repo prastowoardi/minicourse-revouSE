@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/revou.png" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="buttonBack">
+        <button onclick="goBack()" class="button">< Kembali</button>
+    </div>
+    
+    <div class="linkcourse">
+        <h4><a href="https://www.youtube.com/watch?v=Vkio5WaiL7s" target="_blank">Link Youtube 28-11</a></h4>
+        <h4><a href="https://youtu.be/ycDtcY6WL5A" target="_blank">Link Youtube 29-11</a></h4>
+        <h4><a href="https://www.youtube.com/watch?v=HFnRYL1ZGL8" target="_blank">Link Youtube 30-11</a></h4>
+    </div>
+    <table class="calculatorTable">
+        <tr>
+            <th colspan="4">
+                <input type="text" id="display" readonly onkeydown="inputManual(event)">
+            </th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="red" onclick="clearDisplay()">AC</button>
+            </td>
+            <td>
+                <button class="blue" onclick="backspace()">C</button>
+            </td>
+            <td>
+                <button onclick="operator('*')">*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="number(7)">7</button>
+            </td>
+            <td>
+                <button onclick="number(8)">8</button>
+            </td>
+            <td>
+                <button onclick="number(9)">9</button>
+            </td>
+            <td>
+                <button onclick="operator('/')">/</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="number(4)">4</button>
+            </td>
+            <td>
+                <button onclick="number(5)">5</button>
+            </td>
+            <td>
+                <button onclick="number(6)">6</button>
+            </td>
+            <td>
+                <button onclick="operator('+')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="number(3)">3</button>
+            </td>
+            <td>
+                <button onclick="number(2)">2</button>
+            </td>
+            <td>
+                <button onclick="number(1)">1</button>
+            </td>
+            <td>
+                <button onclick="operator('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="black" onclick="operator('+-')">+/-</button>
+            </td>
+            <td>
+                <button onclick="number(0)">0</button>
+            </td>
+            <td>
+                <button class="black" onclick="decimal()">.</button>
+            </td>
+            <td>
+                <button class="green" onclick="calculate()">=</button>
+            </td>
+        </tr>
+    </table>
+    <footer>
+        <img src="assets/github.png" alt="GitHub Logo">
+        <a href="https://github.com/prastowoardi" target="_blank">GitHub</a>
+        
+        <img src="assets/linkedin.png" alt="LinkedIn Logo">
+        <a href="https://www.linkedin.com/in/prastowoardi/" target="_blank">LinkedIn</a>  
+    </footer>
+    <script src="js/calculator.js"></script>
+    <script src="js/general.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/revou.png" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Kalkulator Segitiga</title>
+</head>
+<body>
+    <div class="buttonBack">
+        <button onclick="goBack()" class="button">< Kembali</button>
+    </div>
+
+    <div class="linkcourse">
+        <h4><a href="https://www.youtube.com/watch?v=8dUy1AbxGoM" target="_blank">Link Youtube 1-12</a></h4>
+    </div>
+    <div id="container">
+        <nav class="nav-button">
+            <button class="button" id="switchBtn" onclick="switchCalculation()">Switch ke Hitung Keliling</button>
+            <h2>Perhitungan Luas Segitiga</h2>
+        </nav>
+
+        <section class="input-ukuran">    
+            <label for="alas">Panjang Sisi A / Alas:</label>
+            <input type="number" id="alas" placeholder="Masukkan panjang sisi A / alas" required>
+
+            <label for="lebar" id="labelLebar">Panjang Sisi B / Lebar:</label>
+            <input type="number" id="lebar" placeholder="Masukkan panjang sisi B / lebar" required>
+
+            <label for="tinggi">Panjang Sisi C / Tinggi:</label>
+            <input type="number" id="tinggi" placeholder="Masukkan panjang sisi C / tinggi" required>
+        </section>
+
+        <div class="buttonCalculate">
+            <button class="button" id="calculateBtn" onclick="calculate()">Hitung</button>
+            <button class="button" onclick="reset()">Reset</button>
+        </div>
+
+        <div id="alert"></div>
+        <div id="result"></div>
+    </div>
+
+    <footer>
+        <img src="assets/github.png" alt="GitHub Logo">
+        <a href="https://github.com/prastowoardi" target="_blank">GitHub</a>
+        
+        <img src="assets/linkedin.png" alt="LinkedIn Logo">
+        <a href="https://www.linkedin.com/in/prastowoardi/" target="_blank">LinkedIn</a>  
+    </footer>
+    <script src="js/calculator-segitiga.js"></script>
+    <script src="js/general.js"></script>
+</body>
+</html>

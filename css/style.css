@@ -1,0 +1,196 @@
+/* style.css */
+body {
+    background-image: url("https://i.ibb.co/rpMtKCZ/luffy.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    top: auto;
+}
+
+.linkcourse {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+}
+
+.linkcourse a {
+    text-decoration: none;
+    color:  #ddd;
+    font-weight: bold;
+}
+
+.container {
+    text-align: left;
+    margin-left: 100px;
+}
+
+#container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-button {
+    align-items: inherit;
+    width: 220px;
+}
+
+input {
+    padding: 8px;
+    margin: 8px;
+    width: 110%;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 7px;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#alert {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.input-ukuran {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.buttonCalculate {
+    display: flex;
+    gap: 20px;
+    width: auto;
+    margin-top: 30px;
+}
+
+.day {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.calculatorTable {
+    border-collapse: collapse;
+    margin-top: 150px;
+}
+
+.calculatorTable th, .calculatorTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#display {
+    width: 275px;
+    height: auto;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#lebar, #labelLebar{
+    display: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.red {
+    background-color: red !important;
+    color: white !important;
+}
+
+.blue {
+    background-color: lightskyblue;
+}
+
+.green {
+    background-color: green !important;
+    color: white !important;
+}
+
+.black {
+    background-color: black !important;
+    color: white !important;
+}
+
+.buttonBack {
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    color: white !important;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.button:hover {
+    color: #eee;
+    background-color: #333;
+}
+
+.exercise {
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+    margin: 5px;
+}
+
+.exercise-link {
+    width: auto;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.exercise-link:hover {
+    background-color: #eee;
+    color: #333 ;
+}
+
+footer {
+    background: radial-gradient(circle, white, black); /* Gradien radial */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+footer img {
+    width: 25px; 
+    height: 25px;
+    margin-bottom: -5px;
+}
+
+.no-hover {
+    pointer-events: none;
+}

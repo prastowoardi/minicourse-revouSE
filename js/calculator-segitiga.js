@@ -45,24 +45,19 @@ function calculate() {
             const luas = calculateluas(alas, tinggi);
             if (!isNaN(luas)) {
                 // resultContainer.innerHTML = `<p>Luas Segitiga: ${luas.toFixed(2)}</p>`;
-                printSteps('L = 0.5 * Alas * Tinggi');
+                printSteps('L = 0.5 * alas * tinggi');
                 printSteps(`L = 0.5 * ${alas} * ${tinggi}`);
                 printSteps(`L = ${luas.toFixed(2)}`);
-            } else {
-                resultContainer.innerHTML = '<p>Masukkan panjang alas dan tinggi yang valid.</p>';
             }
         } else {
             const keliling = calculatekeliling(alas, lebar, tinggi);
             if (!isNaN(keliling)) {
                 // resultContainer.innerHTML = `<p>Keliling Segitiga: ${keliling.toFixed(2)}</p>`;
-                printSteps('K = Alas + Lebar + Tinggi');
+                printSteps('K = alas + lebar + tinggi');
                 printSteps(`K = ${alas} + ${lebar} + ${tinggi}`);
                 printSteps(`K = ${keliling.toFixed(2)}`);
-            } else {
-                resultContainer.innerHTML = '<p>Masukkan panjang alas, lebar, dan tinggi yang valid.</p>';
             }
         }
-        reset()
     } else {
         const inputKosong = inputanKosong(alas, lebar, tinggi);
         if (calculationType === 'luas') {
@@ -73,7 +68,6 @@ function calculate() {
     }
 }
 
-// Fungsi printSteps
 function printSteps(step) {
     const stepsContainer = document.getElementById('result');
     stepsContainer.innerHTML += `<p>${step}</p>`;
@@ -84,7 +78,7 @@ function calculateluas(alas, tinggi) {
     if (!isNaN(alas) && !isNaN(tinggi) && alas > 0 && tinggi > 0) {
         return 0.5 * alas * tinggi;
     } else {
-        return NaN; // Mengembalikan NaN untuk menunjukkan bahwa input tidak valid
+        return NaN;
     }
 }
 
@@ -92,7 +86,7 @@ function calculatekeliling(alas, lebar, tinggi) {
     if (!isNaN(alas) && !isNaN(lebar) && !isNaN(tinggi) && alas > 0 && lebar > 0 && tinggi > 0) {
         return alas + lebar + tinggi;
     } else {
-        return NaN; // Mengembalikan NaN untuk menunjukkan bahwa input tidak valid
+        return NaN;
     }
 }
 

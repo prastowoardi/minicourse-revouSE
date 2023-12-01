@@ -47,7 +47,7 @@ function calculate() {
                 // resultContainer.innerHTML = `<p>Luas Segitiga: ${luas.toFixed(2)}</p>`;
                 printSteps('L = 0.5 * alas * tinggi');
                 printSteps(`L = 0.5 * ${alas} * ${tinggi}`);
-                printSteps(`L = ${luas.toFixed(2)}`);
+                printSteps(`L = ${luas.toFixed(2)} cm<sup>2</sup>`);
             }
         } else {
             const keliling = calculatekeliling(alas, lebar, tinggi);
@@ -55,15 +55,16 @@ function calculate() {
                 // resultContainer.innerHTML = `<p>Keliling Segitiga: ${keliling.toFixed(2)}</p>`;
                 printSteps('K = alas + lebar + tinggi');
                 printSteps(`K = ${alas} + ${lebar} + ${tinggi}`);
-                printSteps(`K = ${keliling.toFixed(2)}`);
+                printSteps(`K = ${keliling.toFixed(2)} cm`);
             }
         }
+        document.getElementById('alert').innerHTML = '';
     } else {
         const inputKosong = inputanKosong(alas, lebar, tinggi);
         if (calculationType === 'luas') {
-            document.getElementById('result').innerHTML = `<p>Masukkan panjang ${inputKosong.join(' dan ')} yang valid.</p>`;
+            document.getElementById('alert').innerHTML = `<p>Masukkan panjang ${inputKosong.join(' dan ')} yang valid.</p>`;
         } else {
-            document.getElementById('result').innerHTML = `<p>Masukkan panjang ${inputKosong.join(', ')} yang valid.</p>`;
+            document.getElementById('alert').innerHTML = `<p>Masukkan panjang ${inputKosong.join(', ')} yang valid.</p>`;
         }
     }
 }
@@ -103,6 +104,7 @@ function reset() {
     document.getElementById('lebar').value = '';
     document.getElementById('tinggi').value = '';
     document.getElementById('result').innerHTML = '';
+    document.getElementById('alert').innerHTML = '';
 }
 
 function inputanKosong(alas, lebar, tinggi) {

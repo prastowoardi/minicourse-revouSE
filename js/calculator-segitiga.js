@@ -39,25 +39,61 @@ function calculate() {
 
     // Validasi input
     if (isValidInput(alas, lebar, tinggi)) {
+        const resultContainer = document.getElementById('result');
+
         if (calculationType === 'luas') {
-            calculateluas(alas, tinggi);
+            const luas = calculateluas(alas, tinggi);
+            if (!isNaN(luas)) {
+                // resultContainer.innerHTML = `<p>Luas Segitiga: ${luas.toFixed(2)}</p>`;
+                printSteps('L = 0.5 * Alas * Tinggi');
+                printSteps(`L = 0.5 * ${alas} * ${tinggi}`);
+                printSteps(`L = ${luas.toFixed(2)}`);
+            } else {
+                resultContainer.innerHTML = '<p>Masukkan panjang alas dan tinggi yang valid.</p>';
+            }
         } else {
-            calculatekeliling(alas, lebar, tinggi);
+            const keliling = calculatekeliling(alas, lebar, tinggi);
+            if (!isNaN(keliling)) {
+                // resultContainer.innerHTML = `<p>Keliling Segitiga: ${keliling.toFixed(2)}</p>`;
+                printSteps('K = Alas + Lebar + Tinggi');
+                printSteps(`K = ${alas} + ${lebar} + ${tinggi}`);
+                printSteps(`K = ${keliling.toFixed(2)}`);
+            } else {
+                resultContainer.innerHTML = '<p>Masukkan panjang alas, lebar, dan tinggi yang valid.</p>';
+            }
         }
+        reset()
     } else {
-        const missingFields = findMissingFields(alas, lebar, tinggi);
-        document.getElementById('result').innerHTML = `<p>Isian ${missingFields.join(', ')} kosong. Harap lengkapi semua isian.</p>`;
+        const inputKosong = inputanKosong(alas, lebar, tinggi);
+        if (calculationType === 'luas') {
+            document.getElementById('result').innerHTML = `<p>Masukkan panjang ${inputKosong.join(' dan ')} yang valid.</p>`;
+        } else {
+            document.getElementById('result').innerHTML = `<p>Masukkan panjang ${inputKosong.join(', ')} yang valid.</p>`;
+        }
     }
 }
 
+// Fungsi printSteps
+function printSteps(step) {
+    const stepsContainer = document.getElementById('result');
+    stepsContainer.innerHTML += `<p>${step}</p>`;
+}
+
+
 function calculateluas(alas, tinggi) {
-    const luas = 0.5 * alas * tinggi;
-    document.getElementById('result').innerHTML = `<p>Luas Segitiga: ${luas.toFixed(2)}</p>`;
+    if (!isNaN(alas) && !isNaN(tinggi) && alas > 0 && tinggi > 0) {
+        return 0.5 * alas * tinggi;
+    } else {
+        return NaN; // Mengembalikan NaN untuk menunjukkan bahwa input tidak valid
+    }
 }
 
 function calculatekeliling(alas, lebar, tinggi) {
-    const keliling = alas + lebar + tinggi;
-    document.getElementById('result').innerHTML = `<p>Keliling Segitiga: ${keliling.toFixed(2)}</p>`;
+    if (!isNaN(alas) && !isNaN(lebar) && !isNaN(tinggi) && alas > 0 && lebar > 0 && tinggi > 0) {
+        return alas + lebar + tinggi;
+    } else {
+        return NaN; // Mengembalikan NaN untuk menunjukkan bahwa input tidak valid
+    }
 }
 
 function isValidInput(alas, lebar, tinggi) {
@@ -75,30 +111,30 @@ function reset() {
     document.getElementById('result').innerHTML = '';
 }
 
-function findMissingFields(alas, lebar, tinggi) {
-    const missingFields = [];
+function inputanKosong(alas, lebar, tinggi) {
+    const inputKosong = [];
 
     if (calculationType === 'luas' && (isNaN(alas) || isNaN(tinggi) || alas <= 0 || tinggi <= 0)) {
         if (isNaN(alas) || alas <= 0) {
-            missingFields.push('Alas');
+            inputKosong.push('alas');
         }
 
         if (isNaN(tinggi) || tinggi <= 0) {
-            missingFields.push('Tinggi');
+            inputKosong.push('tinggi');
         }
     } else if (calculationType === 'keliling' && (isNaN(alas) || isNaN(lebar) || isNaN(tinggi) || alas <= 0 || lebar <= 0 || tinggi <= 0)) {
         if (isNaN(alas) || alas <= 0) {
-            missingFields.push('Alas');
+            inputKosong.push('alas');
         }
 
         if (isNaN(lebar) || lebar <= 0) {
-            missingFields.push('Lebar');
+            inputKosong.push('lebar');
         }
 
         if (isNaN(tinggi) || tinggi <= 0) {
-            missingFields.push('Tinggi');
+            inputKosong.push('tinggi');
         }
     }
 
-    return missingFields;
+    return inputKosong;
 }

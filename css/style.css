@@ -37,6 +37,10 @@ body {
     align-items: center;
 }
 
+.nav-button {
+    margin-bottom: 10px;
+}
+
 input {
     padding: 8px;
     margin: 8px;
@@ -88,6 +92,10 @@ input {
     align-items: center;
     padding: 10px;
     font-size: 18px;
+}
+
+#lebar, #labelLebar{
+    display: none;
 }
 
 button {

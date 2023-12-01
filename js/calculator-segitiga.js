@@ -40,6 +40,7 @@ function calculate() {
     // Validasi input
     if (isValidInput(alas, lebar, tinggi)) {
         const resultContainer = document.getElementById('result');
+        resultContainer.innerHTML = '';
 
         if (calculationType === 'luas') {
             const luas = calculateluas(alas, tinggi);

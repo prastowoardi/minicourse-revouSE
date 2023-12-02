@@ -67,6 +67,7 @@ function calculate() {
         } else {
             document.getElementById('alert').innerHTML = `<p>Masukkan panjang ${inputKosong.join(', ')} yang valid.</p>`;
         }
+        document.getElementById('result').innerHTML = '';
     }
 }
 
@@ -74,7 +75,6 @@ function printSteps(step) {
     const stepsContainer = document.getElementById('result');
     stepsContainer.innerHTML += `<p>${step}</p>`;
 }
-
 
 function calculateluas(alas, tinggi) {
     if (!isNaN(alas) && !isNaN(tinggi) && alas > 0 && tinggi > 0) {

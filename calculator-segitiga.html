@@ -25,13 +25,13 @@
 
         <section class="input-ukuran">    
             <label for="alas">Panjang Sisi A / Alas:</label>
-            <input type="number" id="alas" placeholder="Masukkan panjang sisi A / alas" required>
+            <input type="number" id="alas" placeholder="Masukkan panjang sisi A / alas" oninput="validateNumberInput(this)" required>
 
             <label for="lebar" id="labelLebar">Panjang Sisi B / Lebar:</label>
-            <input type="number" id="lebar" placeholder="Masukkan panjang sisi B / lebar" required>
+            <input type="number" id="lebar" placeholder="Masukkan panjang sisi B / lebar" oninput="validateNumberInput(this)" required>
 
             <label for="tinggi">Panjang Sisi C / Tinggi:</label>
-            <input type="number" id="tinggi" placeholder="Masukkan panjang sisi C / tinggi" required>
+            <input type="number" id="tinggi" placeholder="Masukkan panjang sisi C / tinggi" oninput="validateNumberInput(this)" required>
         </section>
 
         <div class="buttonCalculate">

@@ -135,3 +135,8 @@ function inputanKosong(alas, lebar, tinggi) {
 
     return inputKosong;
 }
+
+function validateNumberInput(input) {
+    // Menghapus karakter non-angka dari nilai input
+    input.value = input.value.replace(/[^0-9]/g, '');
+}

@@ -1,7 +1,6 @@
 let calculationType = 'luas';
 
 function switchCalculation() {
-    const container = document.getElementById('container');
     const switchBtn = document.getElementById('switchBtn');
     const calculateBtn = document.getElementById('calculateBtn');
     const h2 = document.querySelector('h2');

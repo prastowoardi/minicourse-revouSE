@@ -1,7 +1,6 @@
 let calculationType = 'luas';
 
 function switchCalculation() {
-    const container = document.getElementById('container');
     const switchBtn = document.getElementById('switchBtn');
     const calculateBtn = document.getElementById('calculateBtn');
     const h2 = document.querySelector('h2');
@@ -37,23 +36,20 @@ function calculate() {
     const lebar = parseFloat(document.getElementById('lebar').value);
     const tinggi = parseFloat(document.getElementById('tinggi').value);
 
-    // Validasi input
     if (isValidInput(alas, lebar, tinggi)) {
         const resultContainer = document.getElementById('result');
         resultContainer.innerHTML = '';
 
         if (calculationType === 'luas') {
-            const luas = calculateluas(alas, tinggi);
+            const luas = calculateLuas(alas, tinggi);
             if (!isNaN(luas)) {
-                // resultContainer.innerHTML = `<p>Luas Segitiga: ${luas.toFixed(2)}</p>`;
                 printSteps('L = 0.5 * alas * tinggi');
                 printSteps(`L = 0.5 * ${alas} * ${tinggi}`);
                 printSteps(`L = ${luas.toFixed(2)} cm<sup>2</sup>`);
             }
         } else {
-            const keliling = calculatekeliling(alas, lebar, tinggi);
+            const keliling = calculateKeliling(alas, lebar, tinggi);
             if (!isNaN(keliling)) {
-                // resultContainer.innerHTML = `<p>Keliling Segitiga: ${keliling.toFixed(2)}</p>`;
                 printSteps('K = alas + lebar + tinggi');
                 printSteps(`K = ${alas} + ${lebar} + ${tinggi}`);
                 printSteps(`K = ${keliling.toFixed(2)} cm`);
@@ -76,7 +72,7 @@ function printSteps(step) {
     stepsContainer.innerHTML += `<p>${step}</p>`;
 }
 
-function calculateluas(alas, tinggi) {
+function calculateLuas(alas, tinggi) {
     if (!isNaN(alas) && !isNaN(tinggi) && alas > 0 && tinggi > 0) {
         return 0.5 * alas * tinggi;
     } else {
@@ -84,7 +80,7 @@ function calculateluas(alas, tinggi) {
     }
 }
 
-function calculatekeliling(alas, lebar, tinggi) {
+function calculateKeliling(alas, lebar, tinggi) {
     if (!isNaN(alas) && !isNaN(lebar) && !isNaN(tinggi) && alas > 0 && lebar > 0 && tinggi > 0) {
         return alas + lebar + tinggi;
     } else {
@@ -137,6 +133,5 @@ function inputanKosong(alas, lebar, tinggi) {
 }
 
 function validateNumberInput(input) {
-    // Menghapus karakter non-angka dari nilai input
     input.value = input.value.replace(/[^0-9]/g, '');
 }

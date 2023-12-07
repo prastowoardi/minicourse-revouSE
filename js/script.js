@@ -6,20 +6,24 @@ function switchCalculation() {
     const h2 = document.querySelector('h2');
     const labelLebar = document.getElementById('labelLebar');
     const inputLebar = document.getElementById('lebar');
-    
+    const imgKeliling = document.getElementById('keliling');
+    const imgLuas = document.getElementById('luas');
     // Reset input dan hasil perhitungan
     reset();
 
     // Ubah jenis perhitungan
     calculationType = calculationType === 'luas' ? 'keliling' : 'luas';
 
-    // Menyembunyikan atau menampilkan input lebar berdasarkan jenis perhitungan
     if (calculationType === 'luas') {
         labelLebar.style.display = 'none';
         inputLebar.style.display = 'none';
+        imgKeliling.style.display = 'none';
+        imgLuas.style.display = 'block';
     } else {
         labelLebar.style.display = 'block';
         inputLebar.style.display = 'block';
+        imgLuas.style.display = 'none';
+        imgKeliling.style.display = 'block';
     }
 
     // Update tampilan dan jenis perhitungan

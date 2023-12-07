@@ -13,16 +13,17 @@ body {
     top: auto;
 }
 
-.linkcourse {
+.segitiga {
     position: absolute;
-    bottom: 50px;
-    left: 10px;
+    left: 10%;
+    border: 2px solid rgb(192, 169, 169);
+    display: inline-block;
+    background-color: #ddd;
 }
 
-.linkcourse a {
-    text-decoration: none;
-    color:  #ddd;
-    font-weight: bold;
+.segitiga img {
+    width: 500px;
+    height: 400px;
 }
 
 .container {
@@ -41,6 +42,8 @@ body {
 .nav-button {
     align-items: inherit;
     width: 220px;
+    position: relative;
+    z-index: 0;
 }
 
 input {
@@ -77,27 +80,11 @@ input {
     position: relative;
 }
 
-.buttonCalculate {
+.button-calculate {
     display: flex;
     gap: 20px;
     width: auto;
     margin-top: 30px;
-}
-
-.day {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.calculatorTable {
-    border-collapse: collapse;
-    margin-top: 150px;
-}
-
-.calculatorTable th, .calculatorTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
 }
 
 #display {
@@ -122,59 +109,9 @@ button {
     cursor: pointer;
 }
 
-.red {
-    background-color: red !important;
-    color: white !important;
-}
-
-.blue {
-    background-color: lightskyblue;
-}
-
-.green {
-    background-color: green !important;
-    color: white !important;
-}
-
-.black {
-    background-color: black !important;
-    color: white !important;
-}
-
-.buttonBack {
-    position: absolute;
-    top: 55px;
-    left: 20px;
-    color: white !important;
-    transition: background-color 0.3s, color 0.3s;
-    display: inline-block;
-}
-
 .button:hover {
     color: #eee;
     background-color: #333;
-}
-
-.exercise {
-    transition: background-color 0.3s, color 0.3s;
-    display: inline-block;
-    margin: 5px;
-}
-
-.exercise-link {
-    width: auto;
-    text-decoration: none;
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: white;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.exercise-link:hover {
-    background-color: #eee;
-    color: #333 ;
 }
 
 footer {
@@ -200,10 +137,6 @@ footer img {
     margin-bottom: -5px;
 }
 
-.no-hover {
-    pointer-events: none;
-}
-
 @media screen and (max-width: 600px) {
     body {
         background-image: url("https://w0.peakpx.com/wallpaper/82/215/HD-wallpaper-cartoon-dark-black-simple.jpg");
@@ -217,17 +150,19 @@ footer img {
         max-width: 100%;
     }
 
-    .exercise-link {
-        font-size: 11.5px;
+    .segitiga {
+        left: auto;
+        top: 0%;
+    }
+
+    .segitiga img {
+        width: 150px;
+        height: 100px;
     }
 
     .button {
         font-size: 13px;
         width: 100%;
-    }
-
-    .buttonBack {
-        top: 20px;
     }
 
     #result {

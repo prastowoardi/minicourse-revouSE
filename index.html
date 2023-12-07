@@ -4,41 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>RevoU - Minicourse</title>
     <link rel="icon" href="assets/revou.png" type="image/x-icon">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <title>Kalkulator Segitiga</title>
 </head>
-<body style="justify-content: left;">
-    <div class="container">
-        <h1>RevoU - Software Engineering Minicourse</h1>
-            <div class="day">
-                <h3>Materi</h3>
-                <div class="exercise no-hover">
-                    <a href="#" class="exercise-link">Pengenalan awal HTML, Git Versioning, Javascript</a>
-                </div>
-            </div>
+<body>
+    <div class="segitiga" id="luas">
+        <img src="https://i.ibb.co/vdbzz88/luas.png" id="luas">
+    </div>
+    <div class="segitiga" id="keliling">
+        <img src="https://i.ibb.co/VT03LMQ/keliling.png" id="luas">
+    </div>
+    <div id="container">
+        <nav class="nav-button">
+            <button class="button" id="switchBtn" onclick="switchCalculation()" style="width: auto;">Switch ke Hitung Keliling</button>
+            <h2>Perhitungan Luas Segitiga</h2>
+        </nav>
+        <section class="input-ukuran">    
+            <label for="alas">Panjang Sisi A / Alas:</label>
+            <input type="number" id="alas" placeholder="Masukkan panjang sisi A / alas" oninput="validateNumberInput(this)" required>
 
-            <div class="day">
-                <h3>Kalkulator</h3>
-                <div class="exercise">
-                    <a href="calculator.html" class="exercise-link">Kalkulator</a>
-                </div>
-            </div>
+            <label for="lebar" id="labelLebar">Panjang Sisi B / Lebar:</label>
+            <input type="number" id="lebar" placeholder="Masukkan panjang sisi B / lebar" oninput="validateNumberInput(this)" required>
 
-            <div class="day">
-                <h3>Mini Project</h3>
-                <div class="exercise">
-                    <a href="calculator-segitiga.html" class="exercise-link">Kalkulator Segitiga</a>
-                </div>
-            </div>
+            <label for="tinggi">Panjang Sisi C / Tinggi:</label>
+            <input type="number" id="tinggi" placeholder="Masukkan panjang sisi C / tinggi" oninput="validateNumberInput(this)" required>
+        </section>
+        <div class="button-calculate">
+            <button class="button" id="calculateBtn" onclick="calculate()" style="width: 75px;">Hitung</button>
+            <button class="button" onclick="reset()" style="width: 75px;">Reset</button>
+        </div>
+        <div id="alert"></div>
+        <div id="result"></div>
     </div>
     <footer>
         <a href="https://www.linkedin.com/in/prastowoardi/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/prastowoardi" target="_blank"><i class="fab fa-github"></i></a>
         <a href="mailto:prastowoardi616@gmail.com"><i class="far fa-envelope"></i></a>
-        <a href="https://instagram.com/prastowo_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://instagram.com/prastowo_" target="_blank"><i class="fab fa-instagram"></i></a>  
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
